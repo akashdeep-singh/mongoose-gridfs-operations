@@ -66,7 +66,7 @@ exports.copyFile = function (mongoose, sourcefilename, sourceprefix = '', destfi
       });
       
       //let fs_write_stream = fs.createWriteStream(destprefix.length ? destprefix + '.' + destfilename : destfilename);
-      readstream.pipe(fs_write_stream);
+      readstream.pipe(writestream);
       /*fs_write_stream.on('close', function () {
         done (null);
       });*/
