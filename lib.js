@@ -55,13 +55,13 @@ exports.copyFile = function (mongoose, sourcefilename, sourceprefix = '', destfi
   let gfs = Grid(mongoose.connection.db);
 
   let fileOptions = {
-    filename: prefix.length ? prefix + '.' + sourcefilename : sourcefilename
+    filename: sourceprefix.length ? sourceprefix + '.' + sourcefilename : sourcefilename
   };
 
   gfs.exist(fileOptions, function (err, found) {
     if (found) {
       let readstream = gfs.createReadStream(fileOptions);
-      let fs_write_stream = fs.createWriteStream(prefix.length ? prefix + '.' + destfilename : destfilename);
+      let fs_write_stream = fs.createWriteStream(destprefix.length ? destprefix + '.' + destfilename : destfilename);
       readstream.pipe(fs_write_stream);
       fs_write_stream.on('close', function () {
         done (null);
