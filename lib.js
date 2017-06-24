@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+//const fs = require('fs');
 const Grid = require('gridfs-stream');
 
 // write to mongodb
@@ -61,10 +61,18 @@ exports.copyFile = function (mongoose, sourcefilename, sourceprefix = '', destfi
   gfs.exist(fileOptions, function (err, found) {
     if (found) {
       let readstream = gfs.createReadStream(fileOptions);
-      let fs_write_stream = fs.createWriteStream(destprefix.length ? destprefix + '.' + destfilename : destfilename);
+      let writestream = gfs.createWriteStream({
+        filename: destprefix.length ? destprefix + '.' + destfilename : destfilename
+      });
+      
+      //let fs_write_stream = fs.createWriteStream(destprefix.length ? destprefix + '.' + destfilename : destfilename);
       readstream.pipe(fs_write_stream);
-      fs_write_stream.on('close', function () {
+      /*fs_write_stream.on('close', function () {
         done (null);
+      });*/
+      writestream.on('close', function (file) {
+        // do something with `file`
+        done(null, file);
       });
     } else if (err) {
       return done(err);
