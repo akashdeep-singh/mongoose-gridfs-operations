@@ -1,0 +1,22 @@
+{
+  "name": "mongoose-gridfs-operations",
+  "version": "0.0.1-alpha",
+  "description": "Helper functions for reading and writing to gridfs using mongoose.",
+  "main": "lib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongoose",
+    "gridfs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/akashdeep-singh/mongoose-gridfs-operations.git"
+  },
+  "author": "Akashdeep Singh",
+  "license": "MIT",
+  "dependencies": {
+    "gridfs-stream": "^1.1.1"
+  }
+}
