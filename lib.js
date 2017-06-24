@@ -49,7 +49,7 @@ exports.readFile = function (mongoose, filename, prefix = '', done) {
 };
 
 // copy a file in mongodb
-exports.copyFile = function (mongoose, sourcefilename, prefix = '', destfilename, done) {
+exports.copyFile = function (mongoose, sourcefilename, sourceprefix = '', destfilename, destprefix='', done) {
   Grid.mongo = mongoose.mongo;
 
   let gfs = Grid(mongoose.connection.db);
