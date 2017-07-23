@@ -12,7 +12,7 @@ npm install --save mongoose-gridfs-operations // or npm i --save mongoose-gridfs
 
 ## Getting Started ##
 
-### Import the class ###
+### Import the library ###
 
 ```javascript
 var gridfsOps = require('mongoose-gridfs-operations');
