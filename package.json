@@ -1,6 +1,6 @@
 {
   "name": "mongoose-gridfs-operations",
-  "version": "0.0.7-alpha.0",
+  "version": "0.0.7-alpha.1",
   "description": "Helper functions for reading and writing to gridfs using mongoose.",
   "main": "lib.js",
   "scripts": {
